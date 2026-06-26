@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h1>Add Device</h1>
+    <form method="POST">
+        <label for="device_name">Device Name</label>
+        <input type="text" id="device_name" name="device_name" required>
+
+        <label for="device_type_id">Device Type</label>
+        <select id="device_type_id" name="device_type_id" required>
+            <option value="">Select device type</option>
+            {% for device_type in device_types %}
+                <option value="{{ device_type.device_type_id }}">{{ device_type.type_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="device_address">Device IP Address</label>
+        <input type="text" id="device_address" name="device_address" required>
+
+        <label for="network_mask">Network Mask</label>
+        <input type="text" id="network_mask" name="network_mask" required>
+
+        <label for="default_gateway">Default Gateway</label>
+        <input type="text" id="default_gateway" name="default_gateway" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location">
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="4"></textarea>
+
+        <button type="submit" class="button primary">Add Device</button>
+    </form>
+</div>
+{% endblock %}
