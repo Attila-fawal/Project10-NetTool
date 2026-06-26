@@ -50,6 +50,7 @@ The app uses a MySQL database named `nettool_db`.
 1. Make sure MySQL server is running.
 2. Run `schema.sql` to create the database, tables, sample roles, users, device types, and sample devices.
 3. The sample users are created with hashed passwords.
+4. The devices table includes indexes on `device_name`, `device_address`, `location`, and `created_at` to support more efficient searching and retrieval.
 
 ## Default Login Credentials
 

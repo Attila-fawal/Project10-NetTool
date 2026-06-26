@@ -62,3 +62,9 @@ INSERT IGNORE INTO devices (device_name, device_type_id, device_address, network
     ('Application Server', 3, '10.0.10.20', '255.255.255.0', '10.0.10.1', 'Server Rack 3', 'Hosts business applications and monitoring services.', 1),
     ('Firewall A', 4, '10.0.0.1', '255.255.255.0', '10.0.0.254', 'Main Security Closet', 'Protects the internal network from external threats.', 1),
     ('Lobby WiFi', 5, '172.16.0.5', '255.255.255.0', '172.16.0.1', 'Front Lobby', 'Wireless access point for visitors and staff.', 1);
+
+-- Indexes for efficient device searching and retrieval
+CREATE INDEX idx_devices_name ON devices(device_name);
+CREATE INDEX idx_devices_address ON devices(device_address);
+CREATE INDEX idx_devices_location ON devices(location);
+CREATE INDEX idx_devices_created_at ON devices(created_at);
